@@ -3,5 +3,6 @@ module Test.MySolutions where
 import Prelude
 
 findEntryByStreet :: String -> AddressBook -> Maybe Entry
-findEntryByStreet street = head <<< filter filterEntry
+findEntryByStreet streetName = head <<< filter (_.address.street >>> eq streetName)
+
 
